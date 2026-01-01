@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solo para ti 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      text-align: center;
+      padding-top: 50px;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff69b4;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 100%;
+      border-radius: 10px;
+      display: none;
+    }
+    .error {
+      color: #ff1493;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>💌 Solo tú puedes abrir esto</h2>
+    <p>Escribe la contraseña correcta 💕</p>
+
+    <input type="password" id="password" placeholder="Nuestra palabra secreta">
+    <br>
+    <button onclick="checkPassword()">Desbloquear</button>
+
+    <p class="error" id="error"></p>
+
+    <img id="carta" src="carta.jpg" alt="Carta de amor">
+  </div>
+
+  <script>
+    function checkPassword() {
+      const correcta = "te quiero"; // CAMBIA AQUÍ LA CONTRASEÑA
+      const input = document.getElementById("password").value;
+      const carta = document.getElementById("carta");
+      const error = document.getElementById("error");
+
+      if (input === correcta) {
+        carta.style.display = "block";
+        error.textContent = "💖";
+      } else {
+        error.textContent = "Esa no es… pero intenta otra vez 💕";
+      }
+    }
+  </script>
+
+</body>
+</html>
